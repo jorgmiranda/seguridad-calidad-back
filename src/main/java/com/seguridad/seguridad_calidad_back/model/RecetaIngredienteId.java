@@ -1,6 +1,7 @@
 package com.seguridad.seguridad_calidad_back.model;
 
 import jakarta.persistence.Embeddable;
+import java.io.Serializable;
 
 @Embeddable
 public class RecetaIngredienteId implements Serializable {
