@@ -27,25 +27,25 @@ public class Receta {
     @Column(nullable = false, length = 255)
     private String nombre;
     
-    @Column(name = "tipoDeCocina", nullable = false, length = 100)
+    @Column(name = "tipo_de_cocina", nullable = false, length = 100)
     private String tipoDeCocina;
     
-    @Column(name = "paisDeOrigen", nullable = false, length = 100)
+    @Column(name = "pais_de_origen", nullable = false, length = 100)
     private String paisDeOrigen;
     
-    @Column(name = "dificultadElaboracion", nullable = false, length = 50)
+    @Column(name = "dificultad_elaboracion", nullable = false, length = 50)
     private String dificultadElaboracion;
     
-    @Column(name = "instruccionesPreparacion", nullable = false)
+    @Column(name = "instrucciones_preparacion", nullable = false)
     private String instruccionesPreparacion;
     
-    @Column(name = "tiempoCoccion", nullable = false, length = 50)
+    @Column(name = "tiempo_coccion", nullable = false, length = 50)
     private String tiempoCoccion;
     
-    @Column(name = "urlImagen", nullable = false, length = 255)
+    @Column(name = "url_imagen", nullable = false, length = 255)
     private String urlImagen;
     
-    @Column(name = "fechaCreacion", nullable = false)
+    @Column(name = "fecha_creacion", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaCreacion;
 

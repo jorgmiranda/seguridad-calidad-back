@@ -9,37 +9,25 @@ public class RecetaIngredienteId implements Serializable {
     private Long recetaId;
     private Long ingredienteId;
 
-    
-
     public RecetaIngredienteId() {
     }
-
-
 
     public RecetaIngredienteId(Long recetaId, Long ingredienteId) {
         this.recetaId = recetaId;
         this.ingredienteId = ingredienteId;
     }
 
-
-
     public Long getRecetaId() {
         return recetaId;
     }
-
-
 
     public void setRecetaId(Long recetaId) {
         this.recetaId = recetaId;
     }
 
-
-
     public Long getIngredienteId() {
         return ingredienteId;
     }
-
-
 
     public void setIngredienteId(Long ingredienteId) {
         this.ingredienteId = ingredienteId;

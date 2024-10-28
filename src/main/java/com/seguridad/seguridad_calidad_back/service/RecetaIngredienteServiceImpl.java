@@ -21,15 +21,15 @@ public class RecetaIngredienteServiceImpl implements RecetaIngredienteService{
     @Autowired
     private IngredienteRepository ingredienteRepository;
 
-    @Override
-    public List<RecetaIngrediente> obtenerPorReceta(Long recetaId) {
-        return recetaIngredienteRepository.findByIdRecetaId(recetaId);
-    }
+    // @Override
+    // public List<RecetaIngrediente> obtenerPorReceta(Long recetaId) {
+    //     return recetaIngredienteRepository.findByIdRecetaId(recetaId);
+    // }
 
-    @Override
-    public List<RecetaIngrediente> obtenerPorIngrediente(Long ingredienteId) {
-        return recetaIngredienteRepository.findByIdIngredienteId(ingredienteId);
-    }
+    // @Override
+    // public List<RecetaIngrediente> obtenerPorIngrediente(Long ingredienteId) {
+    //     return recetaIngredienteRepository.findByIdIngredienteId(ingredienteId);
+    // }
 
     @Override
     public RecetaIngrediente guardarRecetaIngrediente(RecetaIngrediente recetaIngrediente) {
@@ -42,24 +42,24 @@ public class RecetaIngredienteServiceImpl implements RecetaIngredienteService{
         recetaIngredienteRepository.deleteById(id);
     }
 
-    @Override
-    public void actualizarIngredientesDeReceta(Long recetaId, List<Long> nuevosIngredientesIds) {
-         // Paso 1: Eliminar los ingredientes existentes para la receta
-         List<RecetaIngrediente> existentes = recetaIngredienteRepository.findByIdRecetaId(recetaId);
-         recetaIngredienteRepository.deleteAll(existentes);
+    // @Override
+    // public void actualizarIngredientesDeReceta(Long recetaId, List<Long> nuevosIngredientesIds) {
+    //      // Paso 1: Eliminar los ingredientes existentes para la receta
+    //      List<RecetaIngrediente> existentes = recetaIngredienteRepository.findByIdRecetaId(recetaId);
+    //      recetaIngredienteRepository.deleteAll(existentes);
  
-         // Paso 2: Agregar los nuevos ingredientes
-         List<RecetaIngrediente> nuevosIngredientes = nuevosIngredientesIds.stream()
-                 .map(ingredienteId -> {
-                     RecetaIngrediente recetaIngrediente = new RecetaIngrediente();
-                     recetaIngrediente.setReceta(recetaRepository.findById(recetaId).orElseThrow(() -> new RuntimeException("Receta no encontrada")));
-                     recetaIngrediente.setIngrediente(ingredienteRepository.findById(ingredienteId).orElseThrow(() -> new RuntimeException("Ingrediente no encontrado")));
-                     return recetaIngrediente;
-                 })
-                 .collect(Collectors.toList());
+    //      // Paso 2: Agregar los nuevos ingredientes
+    //      List<RecetaIngrediente> nuevosIngredientes = nuevosIngredientesIds.stream()
+    //              .map(ingredienteId -> {
+    //                  RecetaIngrediente recetaIngrediente = new RecetaIngrediente();
+    //                  recetaIngrediente.setReceta(recetaRepository.findById(recetaId).orElseThrow(() -> new RuntimeException("Receta no encontrada")));
+    //                  recetaIngrediente.setIngrediente(ingredienteRepository.findById(ingredienteId).orElseThrow(() -> new RuntimeException("Ingrediente no encontrado")));
+    //                  return recetaIngrediente;
+    //              })
+    //              .collect(Collectors.toList());
  
-         recetaIngredienteRepository.saveAll(nuevosIngredientes);
-     }
+    //      recetaIngredienteRepository.saveAll(nuevosIngredientes);
+    //  }
     
 
     
