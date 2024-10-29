@@ -1,8 +1,3 @@
--- GRANT ALL PRIVILEGES ON * . * TO 'root'@'localhost';
-
--- CREATE USER 'myuser'@'%' IDENTIFIED BY 'password';
-
--- GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
 
 -- Crear la tabla recetas
 CREATE TABLE recetas (
