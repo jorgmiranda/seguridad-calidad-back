@@ -16,6 +16,8 @@ import jakarta.persistence.TemporalType;
 import java.util.Date;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "recetas")
 public class Receta {
@@ -40,7 +42,7 @@ public class Receta {
     private String instruccionesPreparacion;
     
     @Column(name = "tiempo_coccion", nullable = false, length = 50)
-    private String tiempoCoccion;
+    private Integer tiempoCoccion;
     
     @Column(name = "url_imagen", nullable = false, length = 255)
     private String urlImagen;
@@ -53,13 +55,14 @@ public class Receta {
     private Integer popularidad;
 
     @OneToMany(mappedBy = "receta", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<RecetaIngrediente> recetaIngredientes;
 
     public Receta() {
     }
 
     public Receta(Long id, String nombre, String tipoDeCocina, String paisDeOrigen, String dificultadElaboracion,
-            String instruccionesPreparacion, String tiempoCoccion, String urlImagen, Date fechaCreacion,
+            String instruccionesPreparacion, Integer tiempoCoccion, String urlImagen, Date fechaCreacion,
             Integer popularidad, Set<RecetaIngrediente> recetaIngredientes) {
         this.id = id;
         this.nombre = nombre;
@@ -122,11 +125,11 @@ public class Receta {
         this.instruccionesPreparacion = instruccionesPreparacion;
     }
 
-    public String getTiempoCoccion() {
+    public Integer getTiempoCoccion() {
         return tiempoCoccion;
     }
 
-    public void setTiempoCoccion(String tiempoCoccion) {
+    public void setTiempoCoccion(Integer tiempoCoccion) {
         this.tiempoCoccion = tiempoCoccion;
     }
 

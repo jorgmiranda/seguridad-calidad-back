@@ -1,5 +1,8 @@
 package com.seguridad.seguridad_calidad_back.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -17,19 +20,26 @@ import jakarta.persistence.Table;
 @Table(name = "receta_ingredientes")
 public class RecetaIngrediente {
     @EmbeddedId
+    @JsonIgnore
     private RecetaIngredienteId id;
     
     @ManyToOne
     @MapsId("recetaId")
     @JoinColumn(name = "receta_id")
+    @JsonBackReference
     private Receta receta;
     
     @ManyToOne
     @MapsId("ingredienteId")
     @JoinColumn(name = "ingrediente_id")
+    @JsonBackReference
     private Ingrediente ingrediente;
 
     public RecetaIngrediente() {
+    }
+
+    public String getNombreIngrediente() {
+        return ingrediente != null ? ingrediente.getNombre() : null;
     }
 
     public RecetaIngrediente(RecetaIngredienteId id, Receta receta, Ingrediente ingrediente) {

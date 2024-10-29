@@ -11,6 +11,8 @@ import jakarta.persistence.Table;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "ingredientes")
 public class Ingrediente {
@@ -22,6 +24,7 @@ public class Ingrediente {
     private String nombre;
 
     @OneToMany(mappedBy = "ingrediente", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<RecetaIngrediente> recetaIngredientes;
 
     
