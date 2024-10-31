@@ -1,3 +1,4 @@
+
  GRANT ALL PRIVILEGES ON * . * TO 'root'@'localhost';
 
 -- CREATE USER 'myuser'@'%' IDENTIFIED BY 'password';
