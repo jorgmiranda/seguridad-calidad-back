@@ -24,3 +24,5 @@ services:
       - MYSQL_PASSWORD=password
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+# docker-compose build --no-cache
+# docker-compose up -d
