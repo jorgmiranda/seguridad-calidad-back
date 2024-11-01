@@ -11,4 +11,5 @@ public interface RecetaService {
     Receta crearReceta (Receta receta);
     Receta actualizarReceta(Long id, Receta receta);
     void eliminarReceta(Long id);
+    List<Receta> filtrarRecetas(String nombre, String pais, String dificultad, String tipo, String ingrediente);
 }

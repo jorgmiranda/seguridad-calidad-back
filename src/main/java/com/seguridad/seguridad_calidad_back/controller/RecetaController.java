@@ -4,9 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.seguridad.seguridad_calidad_back.dto.Filtro;
 import com.seguridad.seguridad_calidad_back.dto.RecetaDTO;
 import com.seguridad.seguridad_calidad_back.model.Receta;
 import com.seguridad.seguridad_calidad_back.service.RecetaService;
@@ -39,11 +42,22 @@ public class RecetaController {
             dto.setNombre(r.getNombre());
             dto.setTipoDeCocina(r.getTipoDeCocina());
             dto.setTiempoCoccion(r.getTiempoCoccion());
+            dto.setUrlImagen(r.getUrlImagen());
+            dto.setFechaCreacion(r.getFechaCreacion());
+            dto.setPopularidad(r.getPopularidad());
 
             format.add(dto);
         }
 
         return format;
     }
+
+    @PostMapping("/filtrar")
+    public List<Receta> getFilterRecetas(@RequestBody Filtro filtro){
+        List<Receta> recetas = recetaService.filtrarRecetas(filtro.getNombre(), filtro.getPaisOrigen(), filtro.getDificultad(), filtro.getTipoCocina(), filtro.getIngredientes());
+        return recetas;
+    }
+
+
      
 }
