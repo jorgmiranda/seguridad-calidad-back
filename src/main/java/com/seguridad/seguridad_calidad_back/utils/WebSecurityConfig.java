@@ -25,7 +25,8 @@ class WebSecurityConfig{
                         .disable())
                 .authorizeHttpRequests( authz -> authz
                         .requestMatchers(HttpMethod.POST,Constants.LOGIN_URL).permitAll()
-//                        .requestMatchers(HttpMethod.GET,"/recetas/full").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/recetas/filtrar").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/recetas/parcial").permitAll()
                         .anyRequest().authenticated())
                 .addFilterAfter(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
 
