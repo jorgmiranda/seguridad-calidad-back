@@ -1,18 +1,36 @@
 package com.seguridad.seguridad_calidad_back.dto;
 
-import java.util.List;
+import java.util.Date;
 
-public class RecetaDTO {
+public class RecetaParcialDTO {
+    private Long id;
     private String nombre;
     private String tipoDeCocina;
-    private String paisDeOrigen;
     private String dificultadElaboracion;
-    private String instruccionesPreparacion;
-    private Integer tiempoCoccion;
+    private int tiempoCoccion;
     private String urlImagen;
     private Integer popularidad;
-    private List<String> ingredientes;
+    private Date fechaCreacion;
+    
+    public RecetaParcialDTO() {
+    }
+    
+    public RecetaParcialDTO(Long id, String nombre, String tipoDeCocina, String dificultadElaboracion, int tiempoCoccion,
+            String urlImagen) {
+        this.id = id;
+        this.nombre = nombre;
+        this.tipoDeCocina = tipoDeCocina;
+        this.dificultadElaboracion = dificultadElaboracion;
+        this.tiempoCoccion = tiempoCoccion;
+        this.urlImagen = urlImagen;
+    }
 
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -25,49 +43,42 @@ public class RecetaDTO {
     public void setTipoDeCocina(String tipoDeCocina) {
         this.tipoDeCocina = tipoDeCocina;
     }
-    public String getPaisDeOrigen() {
-        return paisDeOrigen;
-    }
-    public void setPaisDeOrigen(String paisDeOrigen) {
-        this.paisDeOrigen = paisDeOrigen;
-    }
     public String getDificultadElaboracion() {
         return dificultadElaboracion;
     }
     public void setDificultadElaboracion(String dificultadElaboracion) {
         this.dificultadElaboracion = dificultadElaboracion;
     }
-    public String getInstruccionesPreparacion() {
-        return instruccionesPreparacion;
-    }
-    public void setInstruccionesPreparacion(String instruccionesPreparacion) {
-        this.instruccionesPreparacion = instruccionesPreparacion;
-    }
-    public Integer getTiempoCoccion() {
+    public int getTiempoCoccion() {
         return tiempoCoccion;
     }
-    public void setTiempoCoccion(Integer tiempoCoccion) {
+    public void setTiempoCoccion(int tiempoCoccion) {
         this.tiempoCoccion = tiempoCoccion;
     }
+
     public String getUrlImagen() {
         return urlImagen;
     }
+
     public void setUrlImagen(String urlImagen) {
         this.urlImagen = urlImagen;
     }
+
     public Integer getPopularidad() {
         return popularidad;
     }
+
     public void setPopularidad(Integer popularidad) {
         this.popularidad = popularidad;
     }
-    public List<String> getIngredientes() {
-        return ingredientes;
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
     }
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
     
-
     
 }

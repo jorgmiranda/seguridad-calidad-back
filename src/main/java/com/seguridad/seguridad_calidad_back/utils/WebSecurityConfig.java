@@ -25,6 +25,10 @@ class WebSecurityConfig{
                         .disable())
                 .authorizeHttpRequests( authz -> authz
                         .requestMatchers(HttpMethod.POST,Constants.LOGIN_URL).permitAll()
+                        //Despues quitar de permitidos
+                        .requestMatchers(HttpMethod.POST,"/recetas").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/ingredientes").permitAll()
+                        //cierre
                         .requestMatchers(HttpMethod.POST,"/recetas/filtrar").permitAll()
                         .requestMatchers(HttpMethod.GET,"/recetas/parcial").permitAll()
                         .anyRequest().authenticated())

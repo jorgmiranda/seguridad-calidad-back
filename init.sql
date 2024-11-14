@@ -37,11 +37,11 @@ CREATE TABLE receta_ingredientes (
 -- Insertar datos en la tabla recetas
 INSERT INTO recetas (nombre, tipo_de_cocina, pais_de_origen, dificultad_elaboracion, instrucciones_preparacion, tiempo_coccion, url_imagen, fecha_creacion, popularidad)
 VALUES
-    ("Tacos al Pastor", "Mexicana", "México", "Media", "Marinar la carne, cocinarla en un trompo, servir en tortillas con piña, cebolla y cilantro.", 30, "https://comedera.com/wp-content/uploads/sites/9/2017/08/tacos-al-pastor-receta.jpg", "2023-01-10", 5),
-    ("Paella", "Española", "España", "Alta", "Cocinar el arroz con el caldo y añadir los ingredientes. Cocinar a fuego lento hasta que el arroz esté tierno.", 60, "https://www.nestleprofessional-latam.com/sites/default/files/styles/np_recipe_detail/public/2022-07/paella.png?itok=CBvKkcsa", "2023-02-15", 4),
-    ("Sushi", "Japonesa", "Japón", "Alta", "Cocinar el arroz y mezclar con vinagre. Enrollar con alga nori y añadir los ingredientes. Cortar en piezas.", 45, "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/0749D9BC-260D-40F4-A07F-54814C4A82B4/Derivates/A73A7793-F3EE-4B90-ABA4-1CC1A0C3E18F.jpg", "2023-03-05", 5),
-    ("Curry de Pollo", "India", "India", "Media", "Saltear la cebolla, añadir el pollo y el curry. Incorporar el tomate y la leche de coco, cocinar a fuego lento.", 40, "https://i.blogs.es/8c3360/pollo_curry/450_1000.jpg", "2023-04-20", 4),
-    ("Pasta Carbonara", "Italiana", "Italia", "Baja", "Cocinar la pasta, mezclar con panceta dorada y añadir la mezcla de huevos y queso. Revolver y servir.", 20, "https://www.gourmet.cl/wp-content/uploads/2016/12/Carbonara-editada.jpg", "2023-05-10", 5);
+    ("Tacos al Pastor", "Mexicana", "México", "Media", "Marinar la carne, cocinarla en un trompo, servir en tortillas con piña, cebolla y cilantro.", 30, "/images/recetas/tacos-al-pastor-receta.jpg", "2023-01-10", 5),
+    ("Paella", "Española", "España", "Alta", "Cocinar el arroz con el caldo y añadir los ingredientes. Cocinar a fuego lento hasta que el arroz esté tierno.", 60, "/images/recetas/paella.jpg", "2023-02-15", 4),
+    ("Sushi", "Japonesa", "Japón", "Alta", "Cocinar el arroz y mezclar con vinagre. Enrollar con alga nori y añadir los ingredientes. Cortar en piezas.", 45, "/images/recetas/sushi.jpg", "2023-03-05", 5),
+    ("Curry de Pollo", "India", "India", "Media", "Saltear la cebolla, añadir el pollo y el curry. Incorporar el tomate y la leche de coco, cocinar a fuego lento.", 40, "/images/recetas/curry-de-pollo.jpg", "2023-04-20", 4),
+    ("Pasta Carbonara", "Italiana", "Italia", "Baja", "Cocinar la pasta, mezclar con panceta dorada y añadir la mezcla de huevos y queso. Revolver y servir.", 20, "/images/recetas/Carbonara-editada.jpg", "2023-05-10", 5);
 
 -- Insertar ingredientes
 INSERT INTO ingredientes (nombre) VALUES

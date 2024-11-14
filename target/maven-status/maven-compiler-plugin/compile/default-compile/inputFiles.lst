@@ -1,20 +1,30 @@
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\RecetaController.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\Filtro.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaDTO.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Ingrediente.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Receta.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngrediente.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngredienteId.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\IngredienteRepository.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaIngredienteRepository.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaRepository.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\SeguridadCalidadBackApplication.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\IngredienteService.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\IngredienteServiceImpl.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaIngredienteService.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaIngredienteServiceImpl.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaService.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaServiceImpl.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\specifications\RecetaSpecifications.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\utils\Constants.java
-C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\utils\WebSecurityConfig.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\IngredientesController.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\LoginController.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\RecetaController.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\SecuredController.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\Filtro.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\IngredientesDTO.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaDTO.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaParcialDTO.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Ingrediente.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Receta.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngrediente.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngredienteId.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\UserModel.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\IngredienteRepository.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaIngredienteRepository.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaRepository.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\UserRepository.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\SeguridadCalidadBackApplication.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\IngredienteService.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\IngredienteServiceImpl.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaIngredienteService.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaIngredienteServiceImpl.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaService.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaServiceImpl.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\UserService.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\specifications\RecetaSpecifications.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\utils\Constants.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\utils\JWTAuthorizationFilter.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\utils\JWTAuthtenticationConfig.java
+H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S4\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\utils\WebSecurityConfig.java
