@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import com.seguridad.seguridad_calidad_back.model.Receta;
 import com.seguridad.seguridad_calidad_back.service.RecetaService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 
 @RestController
@@ -31,6 +33,16 @@ public class RecetaController {
     @GetMapping("/full")
     public List<Receta> getAllRecetas(){
         return recetaService.getAllRecetas();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Receta>> obtenerRecetasByID(@PathVariable Long id) {
+        Optional<Receta> receta = recetaService.getRecetaByID(id);
+        if (receta.isEmpty()) {
+            log.error("No se encontro ninguna Receta con ese ID {} ", id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(receta);
+        }
+        return ResponseEntity.ok(receta);
     }
 
     @GetMapping("/parcial")
@@ -68,6 +80,24 @@ public class RecetaController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<?> editarReceta(@PathVariable Long id, @RequestBody RecetaDTO recetaDTO) {
+        try {
+            Receta recetaCreada = recetaService.actualizarReceta(id, recetaDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body(recetaCreada);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    
+
+    @GetMapping("/usuario/{usuarioId}")
+    public ResponseEntity<List<Receta>> obtenerRecetasPorUsuario(@PathVariable Long usuarioId) {
+        List<Receta> recetas = recetaService.obtenerRecetasPorUsuario(usuarioId);
+        return ResponseEntity.ok(recetas);
     }
      
 }

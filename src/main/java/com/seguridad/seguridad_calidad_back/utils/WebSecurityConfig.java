@@ -28,6 +28,10 @@ class WebSecurityConfig{
                         //Despues quitar de permitidos
                         .requestMatchers(HttpMethod.POST,"/recetas").permitAll()
                         .requestMatchers(HttpMethod.GET,"/ingredientes").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/recetas/usuario/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/recetas/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/recetas/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/recetas/full").permitAll()
                         //cierre
                         .requestMatchers(HttpMethod.POST,"/recetas/filtrar").permitAll()
                         .requestMatchers(HttpMethod.GET,"/recetas/parcial").permitAll()

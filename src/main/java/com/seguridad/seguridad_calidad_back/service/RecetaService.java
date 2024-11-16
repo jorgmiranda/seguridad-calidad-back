@@ -10,7 +10,8 @@ public interface RecetaService {
     List<Receta> getAllRecetas();
     Optional<Receta> getRecetaByID(Long id);
     Receta crearReceta (RecetaDTO recetaDTO);
-    Receta actualizarReceta(Long id, Receta receta);
+    Receta actualizarReceta(Long id, RecetaDTO recetaDTO);
     void eliminarReceta(Long id);
     List<Receta> filtrarRecetas(String nombre, String pais, String dificultad, String tipo, String ingrediente);
+    List<Receta> obtenerRecetasPorUsuario(Long usuarioId);
 }
