@@ -85,9 +85,12 @@ public class UserServiceImpl implements UserService {
 
                 resp.setToken(jwtAuthtenticationConfig.getJWTToken(correo));
 
-                response.setData( resp);
+                resp.setUser(userFound);
+
+                response.setData(resp);
                 response.setError(null);
-                response.setMessageResponse( "Bienvenido!");
+                response.setMessageResponse("Bienvenido!");
+
             } else if (!password.equals(userFound.getPassword())) {
 
                 throw new InvalidCredentialsException("Credenciales incorrectas!");

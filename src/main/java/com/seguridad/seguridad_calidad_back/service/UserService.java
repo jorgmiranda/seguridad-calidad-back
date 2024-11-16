@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 public interface UserService {
-    ResponseModel findByEmail(String correo, String password) throws UsernameNotFoundException;
+    ResponseModel findByEmail(String correo, String password);
 
     ResponseModel registerUser(UserModel user);
 
