@@ -1,4 +1,4 @@
-package com.seguridad.seguridad_calidad_back.utils;
+package com.seguridad.seguridad_calidad_back.core.utils;
 
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -9,7 +9,7 @@ import java.security.Key;
 public class Constants {
 
     // Spring Security
-    public static final String LOGIN_URL = "/login";
+
     public static final String HEADER_AUTHORIZACION_KEY = "Authorization";
     public static final String TOKEN_BEARER_PREFIX = "Bearer ";
 
@@ -27,5 +27,9 @@ public class Constants {
         byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
+    // ENDPOINTS
+    public static final String LOGIN_URL = "/login";
+    public static final String REGISTER_URL = "/registrar";
 
 }

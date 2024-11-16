@@ -1,4 +1,4 @@
-package com.seguridad.seguridad_calidad_back.utils;
+package com.seguridad.seguridad_calidad_back.core.utils;
 
 import io.jsonwebtoken.*;
 import jakarta.servlet.FilterChain;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 import javax.crypto.SecretKey;
 
-import static com.seguridad.seguridad_calidad_back.utils.Constants.*;
+import static com.seguridad.seguridad_calidad_back.core.utils.Constants.*;
 
 
 @Component

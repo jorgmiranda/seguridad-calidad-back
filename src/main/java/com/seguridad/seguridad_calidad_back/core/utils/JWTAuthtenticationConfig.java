@@ -1,4 +1,4 @@
-package com.seguridad.seguridad_calidad_back.utils;
+package com.seguridad.seguridad_calidad_back.core.utils;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static com.seguridad.seguridad_calidad_back.utils.Constants.*;
+import static com.seguridad.seguridad_calidad_back.core.utils.Constants.*;
 
 
 @Configuration

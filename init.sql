@@ -5,6 +5,15 @@
 
  GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
 
+
+-- Crear tabla usuarios
+CREATE TABLE usuarios(
+    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre     VARCHAR(80) NOT NULL,
+    correo     VARCHAR(80) NOT NULL,
+    contrasena VARCHAR(16) NOT NULL
+);
+
 -- Crear la tabla recetas
 CREATE TABLE recetas (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -34,6 +43,11 @@ CREATE TABLE receta_ingredientes (
     PRIMARY KEY (receta_id, ingrediente_id)
 );
 
+-- inserta datos en la tabla usuarios
+INSERT INTO usuarios (nombre, correo, contrasena)
+VALUES
+    ("Malenia Blade of Miquella", "malenia@gmail.com", "123456"),
+    ("Starscourge Radahn", "radahn@gmail.com", "123456");
 -- Insertar datos en la tabla recetas
 INSERT INTO recetas (nombre, tipo_de_cocina, pais_de_origen, dificultad_elaboracion, instrucciones_preparacion, tiempo_coccion, url_imagen, fecha_creacion, popularidad)
 VALUES

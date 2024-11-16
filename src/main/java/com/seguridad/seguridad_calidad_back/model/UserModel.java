@@ -1,25 +1,33 @@
 package com.seguridad.seguridad_calidad_back.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
+@Table(name = "usuarios")
 public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull(message="Debe ingresar Email")
+    @Column(unique=true)
     private String correo;
 
-    @NotNull(message = "Debe ingresar contraseña")
-    @Size(min = 6, max = 12, message = "La contraseña debe tener entre 6 y 12 caracteres")
+    @Column(unique=false)
     private String contrasena;
+
+    @Column(unique=false)
+    private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public long getId() {
         return id;

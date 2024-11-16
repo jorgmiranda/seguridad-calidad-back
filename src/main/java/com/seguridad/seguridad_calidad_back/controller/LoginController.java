@@ -1,43 +1,50 @@
 package com.seguridad.seguridad_calidad_back.controller;
 
+import com.seguridad.seguridad_calidad_back.model.ResponseModel;
 import com.seguridad.seguridad_calidad_back.model.UserModel;
 import com.seguridad.seguridad_calidad_back.service.UserService;
-import com.seguridad.seguridad_calidad_back.utils.JWTAuthtenticationConfig;
+import com.seguridad.seguridad_calidad_back.core.utils.JWTAuthtenticationConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
-
+@RequestMapping("/api")
 @RestController
 public class LoginController {
 
-    @Autowired
-    JWTAuthtenticationConfig jwtAuthtenticationConfig;
+
 
     @Autowired
-    private UserService userDetailsService;
+    private UserService userService;
 
-    @PostMapping("login")
-    public String login(
-            @RequestParam("user") String username,
-            @RequestParam("encryptedPass") String encryptedPass) {
+    @PostMapping("/login")
+    public ResponseModel login(@RequestParam("correo") String correo, @RequestParam("password") String password) {
+        try {
+            return userService.findByEmail(correo, password);
 
-        /**
-         * En el ejemplo no se realiza la correcta validación del usuario
-         */
-
-        final UserModel userDetails = userDetailsService.loadUserByUsername(username);
-
-        if (!userDetails.getPassword().equals(encryptedPass)) {
-            throw new RuntimeException("Invalid login");
+        }catch (Exception e) {
+            return new ResponseModel("Error al intentar login", null, e.getMessage());
         }
+    }
 
-        String token = jwtAuthtenticationConfig.getJWTToken(username);
+    @GetMapping("/usuarios")
+    public ResponseEntity<List<UserModel>> getUsuarios() {
+        final List<UserModel> users = userService.getAllUsers();
 
-        return token;
+        return ResponseEntity.ok(users);
+    }
+
+    @PostMapping("/registrar")
+    public ResponseModel registerUser(@RequestBody UserModel user) {
+        // podríamos considerar encriptar la pass, pero no va a ocurrir ahora xD
+        try {
+            return userService.registerUser(user);
+
+        } catch (Exception e) {
+            return new ResponseModel("Error al intentar Registro", null, e.getMessage());
+        }
 
     }
 
