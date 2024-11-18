@@ -6,16 +6,18 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import com.seguridad.seguridad_calidad_back.core.exceptions.EmptyCommentException;
+import com.seguridad.seguridad_calidad_back.core.exceptions.InvalidCalificationValueException;
+import com.seguridad.seguridad_calidad_back.core.exceptions.NullCalificationValueException;
+import com.seguridad.seguridad_calidad_back.model.*;
+import com.seguridad.seguridad_calidad_back.repository.RecipeCalificationRepository;
+import com.seguridad.seguridad_calidad_back.repository.RecipeCommentRepository;
 import com.seguridad.seguridad_calidad_back.service.RecetaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.seguridad.seguridad_calidad_back.dto.RecetaDTO;
-import com.seguridad.seguridad_calidad_back.model.Ingrediente;
-import com.seguridad.seguridad_calidad_back.model.Receta;
-import com.seguridad.seguridad_calidad_back.model.RecetaIngrediente;
-import com.seguridad.seguridad_calidad_back.model.RecetaIngredienteId;
 import com.seguridad.seguridad_calidad_back.repository.IngredienteRepository;
 import com.seguridad.seguridad_calidad_back.repository.RecetaRepository;
 import com.seguridad.seguridad_calidad_back.specifications.RecetaSpecifications;
@@ -27,6 +29,12 @@ public class RecetaServiceImpl implements RecetaService {
 
     @Autowired
     private IngredienteRepository ingredienteRepository;
+
+    @Autowired
+    private RecipeCommentRepository recipeCommentRepository;
+
+    @Autowired
+    private RecipeCalificationRepository recipeCalificationRepository;
 
     @Override
     public List<Receta> getAllRecetas() {
@@ -125,4 +133,66 @@ public class RecetaServiceImpl implements RecetaService {
         recetaRepository.deleteById(id);
     }
 
+    @Override
+    public ResponseModel addComment(RecipeComment comment) {
+        try {
+            if (comment.getComentario() == null || comment.getComentario().trim().isEmpty()) {
+                throw new EmptyCommentException("Comentario no puede ser vacio");
+            }
+
+            ResponseModel response = new ResponseModel();
+
+            response.setData(recipeCommentRepository.save(comment));
+            response.setError(null);
+            response.setMessageResponse("Comentario guardado correctamente");
+
+            return response;
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ResponseModel addCalification(RecipeCalification calification) {
+        try {
+            if (calification.getCalificacion() < 0) {
+                throw new InvalidCalificationValueException("Calificacion negativo");
+            }
+
+            ResponseModel response = new ResponseModel();
+
+            response.setData(recipeCalificationRepository.save(calification));
+            response.setError(null);
+            response.setMessageResponse("Calificacion guardado correctamente");
+
+            return response;
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ResponseModel getCalification(int id) {
+        try {
+            List<RecipeCalification> califications = recipeCalificationRepository.getAllByIdReceta(id);
+
+            int addition = 0;
+            for (RecipeCalification calification : califications) {
+                addition += calification.getCalificacion();
+            }
+
+            double media = (double) addition / califications.size();
+
+            ResponseModel response = new ResponseModel();
+            response.setData(media);
+            response.setError(null);
+            response.setMessageResponse("Media obtenida correctamente");
+
+            return response;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

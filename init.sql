@@ -14,6 +14,20 @@ CREATE TABLE usuarios(
     contrasena VARCHAR(16) NOT NULL
 );
 
+CREATE TABLE comentario_receta (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_receta INT NOT NULL,
+    id_usuario INT NOT NULL,
+    comentario VARCHAR(300) NOT NULL,
+);
+
+CREATE TABLE calificacion_receta (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    idReceta INT NOT NULL,
+    id_usuario INT NOT NULL,
+    calificacion INT NOT NULL
+);
+
 -- Crear la tabla recetas
 CREATE TABLE recetas (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -48,6 +62,13 @@ INSERT INTO usuarios (nombre, correo, contrasena)
 VALUES
     ("Malenia Blade of Miquella", "malenia@gmail.com", "123456"),
     ("Starscourge Radahn", "radahn@gmail.com", "123456");
+
+INSERT INTO comentario_receta (id, id_receta, id_usuario, comentario)
+VALUES (0, 0, "Comentario añadido vía script");
+
+INSERT INTO calificacion_receta (id, idReceta, id_usuario, calificacion)
+VALUES(0,0,0,5);
+
 -- Insertar datos en la tabla recetas
 INSERT INTO recetas (nombre, tipo_de_cocina, pais_de_origen, dificultad_elaboracion, instrucciones_preparacion, tiempo_coccion, url_imagen, fecha_creacion, popularidad)
 VALUES

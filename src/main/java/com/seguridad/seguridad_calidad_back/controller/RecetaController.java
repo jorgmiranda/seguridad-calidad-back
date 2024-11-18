@@ -1,15 +1,14 @@
 package com.seguridad.seguridad_calidad_back.controller;
 
+import com.seguridad.seguridad_calidad_back.model.RecipeCalification;
+import com.seguridad.seguridad_calidad_back.model.RecipeComment;
+import com.seguridad.seguridad_calidad_back.model.ResponseModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.seguridad.seguridad_calidad_back.dto.Filtro;
 import com.seguridad.seguridad_calidad_back.dto.RecetaDTO;
@@ -69,5 +68,32 @@ public class RecetaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-     
+
+    @PostMapping("/comentar")
+    public ResponseModel addComment(@RequestBody RecipeComment comment) {
+        try {
+            return  recetaService.addComment(comment);
+        } catch (Exception e){
+            return new ResponseModel("Error al guardar comentario", null, e.getMessage());
+        }
+    }
+
+    @PostMapping("/calificar")
+    public ResponseModel addCalification(@RequestBody RecipeCalification calification) {
+        try {
+            return  recetaService.addCalification(calification);
+        }catch (Exception e){
+            return new ResponseModel("Error al guardar calificacion", null, e.getMessage());
+        }
+    }
+
+    @GetMapping("/puntuacion")
+    public ResponseModel getCalification(@RequestParam("idRecipe") int idRecipe){
+        try{
+            return recetaService.getCalification(idRecipe);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
