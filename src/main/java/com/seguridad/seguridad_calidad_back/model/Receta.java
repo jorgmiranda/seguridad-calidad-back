@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -16,6 +18,7 @@ import jakarta.persistence.TemporalType;
 import java.util.Date;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -46,6 +49,9 @@ public class Receta {
     
     @Column(name = "url_imagen", nullable = false, length = 255)
     private String urlImagen;
+
+    @Column(name = "url_video", nullable = true, length = 255)
+    private String urlVideo;
     
     @Column(name = "fecha_creacion", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -57,6 +63,11 @@ public class Receta {
     @OneToMany(mappedBy = "receta", cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<RecetaIngrediente> recetaIngredientes;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    @JsonBackReference
+    private UserModel usuario;
 
     public Receta() {
     }
@@ -163,6 +174,22 @@ public class Receta {
 
     public void setRecetaIngredientes(Set<RecetaIngrediente> recetaIngredientes) {
         this.recetaIngredientes = recetaIngredientes;
+    }
+
+    public UserModel getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UserModel usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getUrlVideo() {
+        return urlVideo;
+    }
+
+    public void setUrlVideo(String urlVideo) {
+        this.urlVideo = urlVideo;
     }
 
     

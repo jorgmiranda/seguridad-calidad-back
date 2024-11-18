@@ -24,7 +24,7 @@ public class IngredientesController {
         for(Ingrediente in : ingredienteService.getAllIngredientes()){
             IngredientesDTO dto = new IngredientesDTO();
             dto.setId(in.getId());
-            dto.setNombre(in.getNombre());
+            dto.setNombreIngrediente(in.getNombre());
             ingredientes.add(dto);
         }
 

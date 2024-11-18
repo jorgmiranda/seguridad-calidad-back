@@ -2,7 +2,7 @@ package com.seguridad.seguridad_calidad_back.dto;
 
 public class IngredientesDTO {
     private Long id;
-    private String nombre;
+    private String nombreIngrediente;
 
     
     public Long getId() {
@@ -11,10 +11,10 @@ public class IngredientesDTO {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getNombre() {
-        return nombre;
+    public String getNombreIngrediente() {
+        return nombreIngrediente;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreIngrediente(String nombreIngrediente) {
+        this.nombreIngrediente = nombreIngrediente;
     }
 }

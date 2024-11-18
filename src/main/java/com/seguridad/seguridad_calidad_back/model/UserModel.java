@@ -1,5 +1,15 @@
 package com.seguridad.seguridad_calidad_back.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -17,6 +27,10 @@ public class UserModel {
 
     @Column(unique=false)
     private String contrasena;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Receta> recetas;
 
     @Column(unique=false)
     private String nombre;
@@ -52,4 +66,14 @@ public class UserModel {
     public void setPassword(String contrasena) {
         this.contrasena = contrasena;
     }
+
+    public List<Receta> getRecetas() {
+        return recetas;
+    }
+
+    public void setRecetas(List<Receta> recetas) {
+        this.recetas = recetas;
+    }
+
+
 }
