@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 import com.seguridad.seguridad_calidad_back.core.exceptions.EmptyCommentException;
 import com.seguridad.seguridad_calidad_back.core.exceptions.InvalidCalificationValueException;
-import com.seguridad.seguridad_calidad_back.core.exceptions.NullCalificationValueException;
 import com.seguridad.seguridad_calidad_back.model.*;
 import com.seguridad.seguridad_calidad_back.repository.RecipeCalificationRepository;
 import com.seguridad.seguridad_calidad_back.repository.RecipeCommentRepository;
@@ -80,7 +79,7 @@ public class RecetaServiceImpl implements RecetaService {
     }
 
     @Override
-    public Receta crearReceta(RecetaDTO recetaDTO) {
+    public Receta crearReceta(RecetaDTO recetaDTO, UserModel usuario) {
 
         Set<RecetaIngrediente> recetaIngredientes = new HashSet<>();
 
@@ -103,6 +102,8 @@ public class RecetaServiceImpl implements RecetaService {
         receta.setUrlImagen(recetaDTO.getUrlImagen());
         receta.setPopularidad(recetaDTO.getPopularidad());
         receta.setFechaCreacion(new Date());
+        receta.setUsuario(usuario);
+        
 
         // Se guarda la receta para obtener el id
         receta = recetaRepository.save(receta);

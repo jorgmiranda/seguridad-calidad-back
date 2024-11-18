@@ -18,7 +18,7 @@ CREATE TABLE comentario_receta (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     id_receta INT NOT NULL,
     id_usuario INT NOT NULL,
-    comentario VARCHAR(300) NOT NULL,
+    comentario VARCHAR(300) NOT NULL
 );
 
 CREATE TABLE calificacion_receta (
@@ -38,8 +38,11 @@ CREATE TABLE recetas (
     instrucciones_preparacion TEXT NOT NULL,
     tiempo_coccion INT NOT NULL,
     url_imagen VARCHAR(255) NOT NULL,
+    url_video VARCHAR(255),
     fecha_creacion DATE NOT NULL,
-    popularidad INT CHECK (popularidad >= 1 AND popularidad <= 5)
+    popularidad INT CHECK (popularidad >= 1 AND popularidad <= 5),
+    usuario_id BIGINT,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
 -- Crear la tabla ingredientes
@@ -63,20 +66,20 @@ VALUES
     ("Malenia Blade of Miquella", "malenia@gmail.com", "123456"),
     ("Starscourge Radahn", "radahn@gmail.com", "123456");
 
-INSERT INTO comentario_receta (id, id_receta, id_usuario, comentario)
-VALUES (0, 0, "Comentario añadido vía script");
+INSERT INTO comentario_receta (id_receta, id_usuario, comentario)
+VALUES (1, 1, "Comentario añadido vía script");
 
-INSERT INTO calificacion_receta (id, idReceta, id_usuario, calificacion)
-VALUES(0,0,0,5);
+INSERT INTO calificacion_receta ( idReceta, id_usuario, calificacion)
+VALUES(1,1,5);
 
 -- Insertar datos en la tabla recetas
-INSERT INTO recetas (nombre, tipo_de_cocina, pais_de_origen, dificultad_elaboracion, instrucciones_preparacion, tiempo_coccion, url_imagen, fecha_creacion, popularidad)
+INSERT INTO recetas (nombre, tipo_de_cocina, pais_de_origen, dificultad_elaboracion, instrucciones_preparacion, tiempo_coccion, url_imagen, url_video, fecha_creacion, popularidad, usuario_id)
 VALUES
-    ("Tacos al Pastor", "Mexicana", "México", "Media", "Marinar la carne, cocinarla en un trompo, servir en tortillas con piña, cebolla y cilantro.", 30, "/images/recetas/tacos-al-pastor-receta.jpg", "2023-01-10", 5),
-    ("Paella", "Española", "España", "Alta", "Cocinar el arroz con el caldo y añadir los ingredientes. Cocinar a fuego lento hasta que el arroz esté tierno.", 60, "/images/recetas/paella.jpg", "2023-02-15", 4),
-    ("Sushi", "Japonesa", "Japón", "Alta", "Cocinar el arroz y mezclar con vinagre. Enrollar con alga nori y añadir los ingredientes. Cortar en piezas.", 45, "/images/recetas/sushi.jpg", "2023-03-05", 5),
-    ("Curry de Pollo", "India", "India", "Media", "Saltear la cebolla, añadir el pollo y el curry. Incorporar el tomate y la leche de coco, cocinar a fuego lento.", 40, "/images/recetas/curry-de-pollo.jpg", "2023-04-20", 4),
-    ("Pasta Carbonara", "Italiana", "Italia", "Baja", "Cocinar la pasta, mezclar con panceta dorada y añadir la mezcla de huevos y queso. Revolver y servir.", 20, "/images/recetas/Carbonara-editada.jpg", "2023-05-10", 5);
+    ("Tacos al Pastor", "Mexicana", "México", "Media", "Marinar la carne, cocinarla en un trompo, servir en tortillas con piña, cebolla y cilantro.", 30, "/images/recetas/tacos-al-pastor-receta.jpg", "https://www.youtube.com/embed/VPvBJloi5FU?si=WQZgfQ44opS38WdH","2023-01-10", 5, 1),
+    ("Paella", "Española", "España", "Alta", "Cocinar el arroz con el caldo y añadir los ingredientes. Cocinar a fuego lento hasta que el arroz esté tierno.", 60, "/images/recetas/paella.jpg", "https://www.youtube.com/embed/zrSyyNugKYo?si=TYL0fYynZxutglHC", "2023-02-15", 4, 1),
+    ("Sushi", "Japonesa", "Japón", "Alta", "Cocinar el arroz y mezclar con vinagre. Enrollar con alga nori y añadir los ingredientes. Cortar en piezas.", 45, "/images/recetas/sushi.jpg", "https://www.youtube.com/embed/O4lFvKaVOOI?si=jFSFhVi_9F6DOCtT", "2023-03-05", 5, 1),
+    ("Curry de Pollo", "India", "India", "Media", "Saltear la cebolla, añadir el pollo y el curry. Incorporar el tomate y la leche de coco, cocinar a fuego lento.", 40, "/images/recetas/curry-de-pollo.jpg", "https://www.youtube.com/embed/pAPt6VQRcn8?si=UbBA3SApebnZTFbL", "2023-04-20", 4, 2),
+    ("Pasta Carbonara", "Italiana", "Italia", "Baja", "Cocinar la pasta, mezclar con panceta dorada y añadir la mezcla de huevos y queso. Revolver y servir.", 20, "/images/recetas/Carbonara-editada.jpg", "https://www.youtube.com/embed/Vqaa_tWCavc?si=W98KOax99R2UpOgo", "2023-05-10", 5, 2);
 
 -- Insertar ingredientes
 INSERT INTO ingredientes (nombre) VALUES

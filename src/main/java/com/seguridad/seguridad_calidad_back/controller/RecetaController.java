@@ -3,6 +3,8 @@ package com.seguridad.seguridad_calidad_back.controller;
 import com.seguridad.seguridad_calidad_back.model.RecipeCalification;
 import com.seguridad.seguridad_calidad_back.model.RecipeComment;
 import com.seguridad.seguridad_calidad_back.model.ResponseModel;
+import com.seguridad.seguridad_calidad_back.model.UserModel;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import com.seguridad.seguridad_calidad_back.dto.RecetaDTO;
 import com.seguridad.seguridad_calidad_back.dto.RecetaParcialDTO;
 import com.seguridad.seguridad_calidad_back.model.Receta;
 import com.seguridad.seguridad_calidad_back.service.RecetaService;
+import com.seguridad.seguridad_calidad_back.service.UserService;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +30,9 @@ public class RecetaController {
 
     @Autowired
     private RecetaService recetaService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/full")
     public List<Receta> getAllRecetas(){
@@ -66,6 +72,7 @@ public class RecetaController {
 
     @PostMapping("/filtrar")
     public List<Receta> getFilterRecetas(@RequestBody Filtro filtro){
+        System.out.println(filtro.getNombre());
         List<Receta> recetas = recetaService.filtrarRecetas(filtro.getNombre(), filtro.getPaisOrigen(), filtro.getDificultad(), filtro.getTipoCocina(), filtro.getIngredientes());
         return recetas;
     }
@@ -73,7 +80,9 @@ public class RecetaController {
     @PostMapping
     public ResponseEntity<?> crearReceta(@RequestBody RecetaDTO recetaDTO) {
         try {
-            Receta recetaCreada = recetaService.crearReceta(recetaDTO);
+            
+            UserModel usuario = userService.getUserById(recetaDTO.getUsuarioId()).get();
+            Receta recetaCreada = recetaService.crearReceta(recetaDTO, usuario);
             return ResponseEntity.status(HttpStatus.CREATED).body(recetaCreada);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());

@@ -13,6 +13,7 @@ public class RecetaDTO {
     private String urlVideo;
     private Integer popularidad;
     private List<String> ingredientes;
+    private Long usuarioId;
 
     public String getNombre() {
         return nombre;
@@ -73,6 +74,12 @@ public class RecetaDTO {
     }
     public void setUrlVideo(String urlVideo) {
         this.urlVideo = urlVideo;
+    }
+    public Long getUsuarioId() {
+        return usuarioId;
+    }
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
     }
     
     
