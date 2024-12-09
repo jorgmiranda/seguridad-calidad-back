@@ -256,4 +256,19 @@ public class RecetaServiceImpl implements RecetaService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public ResponseModel getCommentsInRecipe(int id) {
+        try {
+            ResponseModel response = new ResponseModel();
+            response.setData(recipeCommentRepository.getAllByIdReceta(id));
+            response.setError(null);
+            response.setMessageResponse("Comentarios obtenidos correctamente");
+
+            return response;
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
