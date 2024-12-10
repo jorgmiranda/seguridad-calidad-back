@@ -25,4 +25,6 @@ public interface RecetaService {
 
     ResponseModel getCalification(int id);
 
+    ResponseModel getCommentsInRecipe(int id);
+
 }
