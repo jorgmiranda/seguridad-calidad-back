@@ -49,6 +49,17 @@ public class RecetaController {
         return ResponseEntity.ok(receta);
     }
 
+    @GetMapping("/obtener-comentarios")
+    public List<RecipeComment> obtenerComentarios(@RequestParam("idReceta") int idReceta){
+        try {
+            System.out.println(idReceta);
+            ResponseModel res = recetaService.getCommentsInRecipe(idReceta);
+            return (List<RecipeComment>) res.getData();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @GetMapping("/parcial")
     public List<RecetaParcialDTO> getAllRecetasParcial(){
         List<Receta> recetas = recetaService.getAllRecetas();
@@ -121,7 +132,7 @@ public class RecetaController {
     public ResponseModel addCalification(@RequestBody RecipeCalification calification) {
         try {
             return  recetaService.addCalification(calification);
-        }catch (Exception e){
+        } catch (Exception e){
             return new ResponseModel("Error al guardar calificacion", null, e.getMessage());
         }
     }

@@ -11,15 +11,42 @@ public class RecipeComment {
     private long id;
 
     @Column
-    private int id_receta;
+    private int idReceta;
 
     @Column
-    private int id_usuario;
+    private Long id_usuario;
 
     @Column
     private String comentario;
 
+    private boolean esPublico;
+    private int calificacion;
+
     public RecipeComment() {
+    }
+
+    public int getIdReceta() {
+        return idReceta;
+    }
+
+    public void setIdReceta(int idReceta) {
+        this.idReceta = idReceta;
+    }
+
+    public boolean isEsPublico() {
+        return esPublico;
+    }
+
+    public void setEsPublico(boolean esPublico) {
+        this.esPublico = esPublico;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 
     public long getId() {
@@ -31,18 +58,18 @@ public class RecipeComment {
     }
 
     public int getId_receta() {
-        return id_receta;
+        return idReceta;
     }
 
     public void setId_receta(int id_receta) {
-        this.id_receta = id_receta;
+        this.idReceta = id_receta;
     }
 
-    public int getId_usuario() {
+    public Long getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(int id_usuario) {
+    public void setId_usuario(Long id_usuario) {
         this.id_usuario = id_usuario;
     }
 
