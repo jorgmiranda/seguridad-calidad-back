@@ -17,8 +17,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 class WebSecurityConfig{
 
-    @Autowired
-    JWTAuthorizationFilter jwtAuthorizationFilter;
+    @Bean
+    public JWTAuthorizationFilter jwtAuthorizationFilter() {
+        return new JWTAuthorizationFilter();
+    }
 
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
@@ -41,7 +43,7 @@ class WebSecurityConfig{
                         .requestMatchers(HttpMethod.GET,"/recetas/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/api/usuarios").permitAll()
                         .anyRequest().authenticated())
-                .addFilterAfter(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterAfter(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

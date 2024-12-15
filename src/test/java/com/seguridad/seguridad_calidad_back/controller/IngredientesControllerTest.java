@@ -27,7 +27,7 @@ public class IngredientesControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean 
+    @MockBean
     private IngredienteService ingredienteService;
 
     @InjectMocks

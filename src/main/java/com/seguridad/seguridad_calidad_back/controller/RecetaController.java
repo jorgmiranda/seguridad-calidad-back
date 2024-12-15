@@ -52,7 +52,6 @@ public class RecetaController {
     @GetMapping("/obtener-comentarios")
     public List<RecipeComment> obtenerComentarios(@RequestParam("idReceta") int idReceta){
         try {
-            System.out.println(idReceta);
             ResponseModel res = recetaService.getCommentsInRecipe(idReceta);
             return (List<RecipeComment>) res.getData();
         } catch (Exception e) {
@@ -83,25 +82,30 @@ public class RecetaController {
 
     @PostMapping("/filtrar")
     public List<Receta> getFilterRecetas(@RequestBody Filtro filtro){
-        System.out.println(filtro.getNombre());
-        List<Receta> recetas = recetaService.filtrarRecetas(filtro.getNombre(), filtro.getPaisOrigen(), filtro.getDificultad(), filtro.getTipoCocina(), filtro.getIngredientes());
-        return recetas;
+        return recetaService.filtrarRecetas(filtro.getNombre(), filtro.getPaisOrigen(), filtro.getDificultad(), filtro.getTipoCocina(), filtro.getIngredientes());
     }
 
     @PostMapping
-    public ResponseEntity<?> crearReceta(@RequestBody RecetaDTO recetaDTO) {
+    public ResponseEntity<Object> crearReceta(@RequestBody RecetaDTO recetaDTO) {
         try {
             
-            UserModel usuario = userService.getUserById(recetaDTO.getUsuarioId()).get();
-            Receta recetaCreada = recetaService.crearReceta(recetaDTO, usuario);
-            return ResponseEntity.status(HttpStatus.CREATED).body(recetaCreada);
+            Optional<UserModel> usuario = userService.getUserById(recetaDTO.getUsuarioId());
+
+            if (usuario.isPresent()) {
+                Receta recetaCreada = recetaService.crearReceta(recetaDTO, usuario.get());
+                return ResponseEntity.status(HttpStatus.CREATED).body(recetaCreada);
+            }
+
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+
+
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<?> editarReceta(@PathVariable Long id, @RequestBody RecetaDTO recetaDTO) {
+    public ResponseEntity<Object> editarReceta(@PathVariable Long id, @RequestBody RecetaDTO recetaDTO) {
         try {
             Receta recetaCreada = recetaService.actualizarReceta(id, recetaDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(recetaCreada);

@@ -4,7 +4,10 @@ public class LoginResponse {
     private String token;
     private UserModel user;
 
-    public LoginResponse() {}
+
+    public LoginResponse() {
+        //    Added empty constructor to create raw LoginResponses
+    }
 
     public UserModel getUser() {
         return user;
