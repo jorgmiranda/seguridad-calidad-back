@@ -11,7 +11,7 @@ public class RecipeCommentTest {
         RecipeComment recipeComment = new RecipeComment();
         long id = 1L;
         int idReceta = 101;
-        int idUsuario = 202;
+        Long idUsuario = 202L;
         String comentario = "Delicious recipe!";
 
         // Act
@@ -36,7 +36,7 @@ public class RecipeCommentTest {
         assertNotNull(recipeComment);
         assertEquals(0L, recipeComment.getId());
         assertEquals(0, recipeComment.getId_receta());
-        assertEquals(0, recipeComment.getId_usuario());
+        assertEquals(null, recipeComment.getId_usuario());
         assertNull(recipeComment.getComentario());
     }
 }
