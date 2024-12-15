@@ -20,6 +20,7 @@ public class RecipeCalification {
     private int calificacion;
 
     public RecipeCalification() {
+        //    Added empty constructor to create raw RecipeCalifications
     }
 
     public long getId() {

@@ -26,6 +26,8 @@ import com.seguridad.seguridad_calidad_back.repository.IngredienteRepository;
 import com.seguridad.seguridad_calidad_back.repository.RecetaRepository;
 import com.seguridad.seguridad_calidad_back.specifications.RecetaSpecifications;
 
+import static com.fasterxml.jackson.databind.type.LogicalType.Collection;
+
 @Service
 public class RecetaServiceImpl implements RecetaService {
     @Autowired

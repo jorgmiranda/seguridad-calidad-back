@@ -23,6 +23,7 @@ public class RecipeComment {
     private int calificacion;
 
     public RecipeComment() {
+        //    Added empty constructor to create raw RecipeComments
     }
 
     public int getIdReceta() {

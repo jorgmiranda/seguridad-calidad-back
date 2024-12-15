@@ -11,7 +11,7 @@ public class RecipeCommentTest {
         RecipeComment recipeComment = new RecipeComment();
         long id = 1L;
         int idReceta = 101;
-        int idUsuario = 202;
+        Long idUsuario = 202L;
         String comentario = "Delicious recipe!";
 
         // Act

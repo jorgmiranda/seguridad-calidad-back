@@ -1,44 +1,44 @@
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\IngredientesController.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\LoginController.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\RecetaController.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\BadRequestException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\EmailAlreadyRegisteredException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\EmptyCommentException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\InvalidCalificationValueException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\InvalidCredentialsException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\NullCalificationValueException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\UnableToRegisterUser.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\UserNotFoundException.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\security\WebSecurityConfig.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\utils\Constants.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\utils\JWTAuthorizationFilter.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\utils\JWTAuthtenticationConfig.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\Filtro.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\IngredientesDTO.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaDTO.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaParcialDTO.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Ingrediente.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\LoginResponse.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Receta.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngrediente.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngredienteId.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecipeCalification.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecipeComment.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\ResponseModel.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\UserModel.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\IngredienteRepository.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaIngredienteRepository.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaRepository.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecipeCalificationRepository.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecipeCommentRepository.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\UserRepository.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\SeguridadCalidadBackApplication.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\IngredienteService.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaIngredienteService.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaService.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\IngredienteServiceImpl.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\RecetaIngredienteServiceImpl.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\RecetaServiceImpl.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\UserServiceImpl.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\UserService.java
-H:\Duoc\SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE\S8\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\specifications\RecetaSpecifications.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\IngredientesController.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\LoginController.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\controller\RecetaController.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\BadRequestException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\EmailAlreadyRegisteredException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\EmptyCommentException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\InvalidCalificationValueException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\InvalidCredentialsException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\NullCalificationValueException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\UnableToRegisterUser.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\exceptions\UserNotFoundException.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\security\WebSecurityConfig.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\utils\Constants.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\utils\JWTAuthorizationFilter.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\core\utils\JWTAuthtenticationConfig.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\Filtro.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\IngredientesDTO.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaDTO.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\dto\RecetaParcialDTO.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Ingrediente.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\LoginResponse.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\Receta.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngrediente.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecetaIngredienteId.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecipeCalification.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\RecipeComment.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\ResponseModel.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\model\UserModel.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\IngredienteRepository.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaIngredienteRepository.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecetaRepository.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecipeCalificationRepository.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\RecipeCommentRepository.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\repository\UserRepository.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\SeguridadCalidadBackApplication.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\IngredienteService.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaIngredienteService.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\RecetaService.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\IngredienteServiceImpl.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\RecetaIngredienteServiceImpl.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\RecetaServiceImpl.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\serviceImpl\UserServiceImpl.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\service\UserService.java
+C:\proyectos\duoc\codigo\back\seguridad-calidad-back\src\main\java\com\seguridad\seguridad_calidad_back\specifications\RecetaSpecifications.java
